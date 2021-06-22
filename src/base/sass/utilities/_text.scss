@@ -1,0 +1,189 @@
+/* TEXT */
+
+// --------------------- HEADING --------------------------
+$headingList: "h1" 40 36, "h2" 36 30, "h3" 30 24, "h4" 24 20, "h5" 20 18;
+
+@each $headerName, $normalSize, $mediaSize in $headingList {
+	#{$headerName} {
+		font-size: $normalSize + px;
+		@media #{$mediaMobile} {
+			font-size: $mediaSize + px;
+		}
+	}
+}
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+p {
+	margin-bottom: 0.5em;
+}
+
+// --------------------- FONT SIZES --------------------------
+$textSizes: 45 40, 40 36, 36 30, 30 24, 24 20, 20 18;
+
+@each $default, $small in $textSizes {
+	.fs-#{$default} {
+		font-size: #{$default}px;
+
+		@media #{$mediaMobile} {
+			font-size: #{$small}px;
+		}
+
+		&--important {
+			font-size: #{$default}px !important;
+
+			@media #{$mediaMobile} {
+				font-size: #{$small}px !important;
+			}
+		}
+	}
+}
+
+// --------------------- COLORS --------------------------
+@each $name, $base in $rootColors {
+	.#{$name} {
+		color: $base;
+	}
+}
+
+// --------------------- FONTS --------------------------
+.ft-CB {
+	font-family: $ftCondensedBold;
+}
+
+.ft-CEB {
+	font-family: $ftCondensedExBold;
+}
+
+.ft-CEBO {
+	font-family: $ftCondExBoldObl;
+}
+
+.ft-B {
+	font-family: $ftBold;
+}
+
+.ft-EB {
+	font-family: $ftExtraBold;
+}
+
+.ft-SdtL {
+	font-family: $ftSTDLight;
+}
+
+.ft-SdtCB {
+	font-family: $ftSTDCondensedBold;
+}
+
+.i-R {
+	font-family: $interReg;
+}
+
+.i-B {
+	font-family: $interBold;
+}
+
+.i-SB {
+	font-family: $interSemiBold;
+}
+
+.i-EB {
+	font-family: $interExtraBold;
+}
+
+// --------------------- TEXT ALIGN --------------------------
+.taL {
+	text-align: left;
+}
+
+.taC {
+	text-align: center;
+}
+
+.taR {
+	text-align: right;
+}
+
+.taJ {
+	text-align: justify;
+}
+
+@include mq(mob) {
+	.taML {
+		text-align: left;
+	}
+
+	.taMC {
+		text-align: center;
+	}
+
+	.taMR {
+		text-align: right;
+	}
+
+	.taMJ {
+		text-align: justify;
+	}
+}
+
+// --------------------- TITLES --------------------------
+$titleList: "ft-cebo" $ftCondExBoldObl, "ft-cb" $ftCondensedBold, "ft-b" $ftBold;
+
+@each $fontTitle, $font in $titleList {
+	.#{$fontTitle}--yellow {
+		font-family: $font;
+		color: $yellow;
+	}
+
+	.#{$fontTitle}--orange {
+		font-family: $font;
+		color: $orange;
+	}
+
+	.#{$fontTitle}--white {
+		font-family: $font;
+		color: $white;
+	}
+}
+
+// --------------------- TEXT DECORATION --------------------------
+.tdU {
+	text-decoration: underline;
+}
+
+.tdN {
+	text-decoration: none;
+}
+
+@include mq(mob) {
+	.tdMU {
+		text-decoration: underline;
+	}
+
+	.tdMN {
+		text-decoration: none;
+	}
+}
+
+// --------------------- TEXT TRANSFORM --------------------------
+.ttU {
+	text-transform: uppercase;
+}
+
+.ttL {
+	text-transform: lowercase;
+}
+
+@include mq(mob) {
+	.ttMU {
+		text-transform: uppercase;
+	}
+
+	.ttML {
+		text-transform: lowercase;
+	}
+}

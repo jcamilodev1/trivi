@@ -1,0 +1,166 @@
+/* MIXINS */
+
+// MEDIAQUERIES
+@mixin mq($media){
+	@if type-of($media) == number {
+		@if unitless($media) {
+			@media only screen and (max-width: $media + px){
+				@content;
+			}
+		}
+	} @else {
+		@if type-of(map-get($mediaqueries,$media)) == number {
+			@media only screen and (max-width: map-get($mediaqueries,$media) + px){
+				@content;
+			}
+		} @else if type-of(map-get($mediaqueries,$media)) == string {
+			@media #{map-get($mediaqueries,$media)}{
+				@content;
+			}
+		}
+	}
+}
+
+// FLEXBOX
+@mixin flex($jc: center, $ai: center, $fw: wrap, $d: flex){
+	display: $d;
+	justify-content: $jc;
+	align-items: $ai;
+	align-content: $ai;
+	flex-wrap: $fw;
+	@content;
+}
+
+// BG
+@mixin bg($path, $repeat: no-repeat, $position: center, $size: contain, $attachment: initial){
+	background-image: url("../img/#{$path}");
+	background-position: $position;
+	background-repeat: $repeat;
+	background-size: $size;
+	background-attachment: $attachment;
+	@content;
+}
+
+// ASPECT RATIO
+@mixin aspectRatio($width, $height) {
+	width: 100%;
+	position: relative;
+	&::before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: ($height / $width) * 100%;
+	}
+	> iframe {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+// TRANSITIONS
+@mixin transition($prop: all, $time: .3, $timing: ease){
+	transition: $prop $time + s $timing;
+	@content;
+}
+
+// CALL ANIMATION
+@mixin animation($name, $time) {
+	animation: $name linear $time;
+	animation-iteration-count: infinite;
+	transform-origin: 50% 50%;
+	@content;
+}
+
+// PLACEHOLDER STYLES
+@mixin optional-at-root($sel) {
+	@at-root #{if(not &, $sel, selector-append(&, $sel))} {
+		@content;
+	}
+}
+
+@mixin placeholder {
+	@include optional-at-root('::-webkit-input-placeholder') {
+		@content;
+	}
+	@include optional-at-root(':-moz-placeholder') {
+		@content;
+	}
+	@include optional-at-root('::-moz-placeholder') {
+		@content;
+	}
+	@include optional-at-root(':-ms-input-placeholder') {
+		@content;
+	}
+}
+
+// CLEAR FLOAT
+@mixin clear-b () {
+	&::after, &::before{
+		content: "";
+		display: table;
+		clear: both;
+		width: 100%;
+	}
+}
+
+@mixin set-coords ($top:auto, $right:auto, $bottom:auto, $left:auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+// CUSTOM TEXT
+@mixin custom-text ($size: $baseFont + px, $weight: 400, $color: inherit, $font: $fontFamily) {
+	font-weight: $weight;
+	font-size: $size;
+	font-family: $font;
+	color: $color;
+}
+
+// GRADIENTS THEME
+@mixin gradient($type: 'orange', $direction: 'top') {
+	@if $type == 'orange' {
+		background-color: #f0940c;
+		background-image: linear-gradient(to #{$direction}, #f47920, #f38616, #f0940c, #eda002, #e8ad00);
+	}
+	@if $type == 'gray' {
+		background-color: #4b4c4d;
+		background-image: linear-gradient(to #{$direction}, #3f4040, #454647, #4b4c4d, #515354, #58595b);
+	}
+	@if $type == 'black' {
+		background-color: #292829;
+		background-image: linear-gradient(to #{$direction}, #000000, #181818, #292829, #3b3a3b, #4d4d4e);
+	}
+	@if $type == 'light' {
+		background-color: #fafafa;
+		background-image: linear-gradient(to #{$direction}, #f6f6f6, #f8f8f8, #fafafa, #fdfdfd, #ffffff);
+	}
+
+}
+
+@mixin gradient-border($type: 'orange', $direction: 'bottom') {
+	@if $type == 'orange' {
+		border-color: #f0940c;
+		border-image: linear-gradient(to #{$direction}, #f47920, #f38616, #f0940c, #eda002, #e8ad00) 1;
+	}
+	@if $type == 'gray' {
+		border-color: #4b4c4d;
+		border-image: linear-gradient(to #{$direction}, #3f4040, #454647, #4b4c4d, #515354, #58595b) 1;
+	}
+	@if $type == 'black' {
+		border-color: #292829;
+		border-image: linear-gradient(to #{$direction}, #000000, #181818, #292829, #3b3a3b, #4d4d4e) 1;
+	}
+
+}
+
+.clear-b{
+	@include clear-b;
+}

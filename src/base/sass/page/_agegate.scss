@@ -1,0 +1,56 @@
+/* AGEGATE */
+
+.agegate-buttons {
+    margin: 40px 0;
+
+    &__yes,
+    &__no {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 100px;
+        font-family: $ftSTDCondensedBold;
+        margin: 0 20px;
+        max-width: none;
+        padding: 0;
+        width: auto;
+    }
+
+    &__yes {
+        color: $blue-dark;
+        position: relative;
+        z-index: 0;
+        &::before {
+            content: "";
+            background: url('/img/shape_3.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: block;
+            z-index: -1;
+
+            height: 185px;
+            position: absolute;
+            right: -42px;
+            top: -20px;
+            width: 235px;
+        }
+    }
+
+    &__no {
+        color: $orange;
+    }
+
+    @include mq(mobS4) {
+        &__yes,
+        &__no {
+            font-size: 70px;
+        }
+
+        &__yes {
+            &::before {
+                right: -35px;
+                width: 195px;
+            }
+        }
+    }
+}

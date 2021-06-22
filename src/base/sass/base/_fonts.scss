@@ -1,0 +1,134 @@
+/* FONTS */
+
+@font-face {
+    font-family: "Futura LT CondensedBold";
+    src: url("../fonts/futura/FuturaLT-CondensedBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/futura/FuturaLT-CondensedBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Futura LT CondensedExtraBold";
+    src: url("../fonts/futura/FuturaLT-CondensedExtraBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/futura/FuturaLT-CondensedExtraBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Futura LT CondExtraBoldObl";
+    src: url("../fonts/futura/FuturaLT-CondExtraBoldObl.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/futura/FuturaLT-CondExtraBoldObl.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Futura LT Bold";
+    src: url("../fonts/futura/FuturaLT-Bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/futura/FuturaLT-Bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Futura LT ExtraBold";
+    src: url("../fonts/futura/FuturaLT-ExtraBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/futura/FuturaLT-ExtraBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Futura Std Light";
+    src: url("../fonts/futura/FuturaStd-Light.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/futura/FuturaStd-Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Futura Std CondensedBold";
+    src: url("../fonts/futura/FuturaStd-CondensedBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/futura/FuturaStd-CondensedBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter Regular";
+    src: url("../fonts/inter/Inter-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/inter/Inter-Regular.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter Light BETA";
+    src: url("../fonts/inter/Inter-Light-BETA.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/inter/Inter-Light-BETA.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Inter Bold";
+    src: url("../fonts/inter/Inter-Bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/inter/Inter-Bold.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Inter Semi Bold";
+    src: url("../fonts/inter/Inter-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/inter/Inter-SemiBold.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Inter Extra Bold";
+    src: url("../fonts/inter/Inter-ExtraBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/inter/Inter-ExtraBold.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Helvetica Neue LT Std";
+    src: url("../fonts/inter/Inter-ExtraBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/helvetica/HelveticaNeueLTStd-Cn.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+// FUTURA FONTS
+$ftCondensedBold: "Futura LT CondensedBold";
+$ftCondensedExBold: "Futura LT CondensedExtraBold";
+$ftCondExBoldObl: "Futura LT CondExtraBoldObl";
+$ftBold: "Futura LT Bold";
+$ftExtraBold: "Futura LT ExtraBold";
+$ftSTDLight: "Futura Std Light";
+$ftSTDCondensedBold: "Futura Std CondensedBold";
+
+// INTER FONTS
+$interReg: "Inter Regular";
+$interLight: "Inter Light BETA";
+$interBold: "Inter Bold";
+$interSemiBold: "Inter Semi Bold";
+$interExtraBold: "Inter Extra Bold";
+
+// HELVETICA
+$hvLT: "Helvetica Neue LT Std"

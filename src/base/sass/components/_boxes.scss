@@ -1,0 +1,131 @@
+/* BOXES */
+
+.main-image {
+	margin: -25px 0;
+}
+
+.wallpaper {
+	margin-bottom: 30px;
+}
+
+.code-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 120px;
+	margin-bottom: 50px;
+
+	@include bg("back_code.svg", $size: 100%);
+
+	&__text {
+		color: $blue-dark;
+		font-family: $ftCondExBoldObl;
+		font-size: 38px;
+	}
+
+	@include mq(mobS4) {
+		&__text {
+			font-size: 25px;
+		}
+	}
+}
+
+
+// ----------------- ANIMATED BACKGROIND SHAPES --------------------
+.circles {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.circles li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	bottom: 0;
+}
+
+.circles li:nth-child(1) {
+	$size: 230px;
+
+	animation: animate2 25s linear infinite;
+	animation-delay: 0s;
+	left: calc(-#{$size} / 2);
+	top: 0;
+	height: $size;
+	width: $size;
+
+	@include bg("shape_1.svg");
+}
+
+.circles li:nth-child(2) {
+	$size: 230px;
+
+	animation: animate 50s linear infinite;
+	animation-delay: 0s;
+
+	bottom: 10vh;
+	right: calc(-#{$size} / 1.8);
+	height: $size;
+	width: $size;
+
+	@include bg("shape_2.svg");
+}
+
+.circles li:nth-child(3) {
+	$size: 700px;
+
+	animation: animate2 25s linear infinite;
+	animation-delay: 0s;
+	background: #fff;
+	border-radius: 50%;
+	opacity: 0.1;
+
+	right: calc(-#{$size} / 1.4);
+	top: calc(-#{$size} / 2.3);
+	height: $size;
+	width: $size;
+}
+
+.circles li:nth-child(4) {
+	$size: 570px;
+
+	animation: animate2 25s linear infinite;
+	animation-delay: 0s;
+	background: #fff;
+	border-radius: 50%;
+	opacity: 0.1;
+
+	left: calc(-#{$size} / 1.5);
+	bottom: calc(-#{$size} / 1.5);
+	height: $size;
+	width: $size;
+}
+
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(20vh) rotate(360deg);
+	}
+	100% {
+		transform: translateY(0) rotate(720deg);
+	}
+}
+
+@keyframes animate2 {
+	0% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-20vh) rotate(80deg);
+	}
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+}

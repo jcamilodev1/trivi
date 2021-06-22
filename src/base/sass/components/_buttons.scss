@@ -1,0 +1,70 @@
+/* BUTTONS */
+
+.how-to-play-btn {
+    border: none;
+    background: none;
+    color: $white;
+    display: block;
+    font-family: $ftSTDCondensedBold;
+    font-size: 24px;
+    margin: auto;
+    margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::before {
+        content: "";
+        height: 35px;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+
+        @include bg('icons/icon_d-arrow-down.svg');
+    }
+}
+
+.btn, button {
+    display: block;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 4px;
+    max-width: 270px;
+    padding: 15px 30px;
+    width: calc(100% - 8px);
+}
+
+.btn-theme {
+    background-color: $yellow;
+    color: $blue-dark;
+    font-family: $interExtraBold;
+    margin: 0 auto;
+    &--reg {
+        font-family: $interReg;
+    }
+
+    // COLORS
+    &--transparent {
+        background-color: transparent;
+        color: $yellow;
+    }
+    &--line {
+        background-color: transparent;
+        border: 1px solid $white;
+        color: $white;
+    }
+
+    // SIZES
+    &--small {
+        font-size: 16px;
+        padding: 9px 20px;
+    }
+}
+
+.group-btn {
+    text-align: center;
+}

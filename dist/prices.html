@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header class="header">
+        <img class="logo_example" src="/img/logo_example.png" alt="Logo">
+    </header>
+    <div class="container">
+        <section class="price-header">
+            <h1 class="ft-cebo--yellow">GANA INCREÍBLES PREMIOS</h1>
+            <img class="main-image" src="/img/home_example.png" alt="Home Image">
+            <button class="how-to-play-btn">¿Cómo jugar?</button>
+        </section>
+
+        <section class="rules-container">
+            <h2 class="fs-45 ft-cebo--white ttU">Reglas del juego</h2>
+            <ol class="rules-list">
+                <li class="rules-list__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li class="rules-list__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li class="rules-list__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li class="rules-list__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ol>
+        </section>
+
+        <div class="group-btn">
+            <button class="btn-theme" >EMPEZAR</button>
+            <button class="btn-theme btn-theme--transparent">VER RANKING</button>
+        </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="price-card">
+                        <h2 class="fs-45 ft-cb--orange ttU">PRIMER PUESTO</h2>
+                        <img src="../img/card_price.png" alt="Imagen de Premio">
+                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="price-card">
+                        <h2 class="fs-45 ft-cb--orange ttU">SEGUNDO PUESTO</h2>
+                        <img src="../img/card_price.png" alt="Imagen de Premio">
+                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="price-card">
+                        <h2 class="fs-45 ft-cb--orange ttU">TERCER PUESTO</h2>
+                        <img src="../img/card_price.png" alt="Imagen de Premio">
+                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.body.insertAdjacentHTML('beforeend', '<ul class="circles"><li></li><li></li><li></li><li></li></ul>');
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+/* CARDS */
+
+.price-card {
+    margin: 20px 0;
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.position-card {
+    background-color: $blue-ultra-dark;
+    border: 3px solid $yellow;
+    border-radius: 10px;
+    color: $white;
+    font-size: 12px;
+    margin: 8px 4px;
+    padding: 5px 10px;
+
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    >div{
+        display: flex;
+        align-items: center;
+    }
+    &__number {
+        display: inline-block;
+        border-radius: 50%;
+        color: $yellow;
+        font-family: $ftBold;
+        font-size: 15px;
+        height: 30px;
+        margin-right: 5px;
+        padding: 0.3em;
+        text-align: center;
+        width: 30px;
+    }
+
+    &__name {
+        font-family: $interLight;
+    }
+
+    &__points {
+        font-family: $interBold;
+    }
+
+    // TOP CARDS
+    &--top {
+        background-color: $yellow;
+        color: $black;
+
+        .position-card {
+            &__number {
+                background-color: $blue;
+                color: $black;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+/* LIST */
+
+.rules-container {
+    .rules-list {
+        counter-reset: rules;
+        &__item {
+            line-height: 21px;
+            margin-bottom: 1em;
+            min-height: 48px;
+            padding-left: 48px;
+            position: relative;
+
+            &::before {
+                counter-increment: rules;
+                content: counter(rules) " ";
+                font-family: $ftCondensedBold;
+                font-size: 48px;
+                line-height: 1em;
+
+                left: 0;
+                position: absolute;
+                top: 0;
+            }
+        }
+    }
+}

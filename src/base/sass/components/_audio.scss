@@ -1,0 +1,35 @@
+/* AUDIO */
+
+.audio-container {
+    &__button {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        background-color: $orange-medium;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 50px;
+        padding: 0;
+        width: 50px;
+
+        position: absolute;
+        right: 15px;
+        top: 15px;
+
+        @include bg('icons/icon_audio.svg', $size: 70%);
+
+        &:hover {
+            background-color: $orange;
+        }
+    }
+    .active-btnmusic{
+        &::after{
+            content: "/";
+            display: inline-block;
+            position: relative;
+            font-size: 60px;
+            color:#007aff;
+        }
+    }
+}

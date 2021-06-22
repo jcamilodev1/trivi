@@ -1,0 +1,32 @@
+    /* MADE BY MC */
+
+/* BASE */
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/config';
+@import 'base/mediaqueries';
+@import 'base/general';
+
+/* UTILITIES */
+@import 'utilities/mixins';
+@import 'utilities/text';
+
+/* LAYOUT */
+@import 'layout/layout';
+@import 'layout/container';
+@import 'layout/header';
+
+/* PAGE */
+@import 'page/agegate';
+@import 'page/dama';
+
+/* COMPONENTS */
+@import 'components/boxes';
+@import 'components/buttons';
+@import 'components/list';
+@import 'components/cards';
+@import 'components/swiper';
+@import 'components/audio';
+@import 'components/form';
+@import 'components/boxes';
+@import 'components/ranking';

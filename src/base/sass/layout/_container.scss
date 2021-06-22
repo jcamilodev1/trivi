@@ -1,0 +1,28 @@
+/* CONTAINER */
+
+.container {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 15px 35px;
+}
+
+.middle-container {
+    max-width: 400px;
+    max-height: 300px;
+    padding: 15px 30px;
+
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.inner-header {
+    margin-bottom: 40px;
+}
+
+.inner-footer {
+    text-align: center;
+}

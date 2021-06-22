@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header class="header">
+        <img class="logo_example" src="/img/logo_example.png" alt="Logo">
+        <div class="audio-container">
+            <button class="audio-container__button active-btnmusic" id="init_music"></button>
+            <audio class="audio-container__src" src="./audio/Theme_ Quien Quiere Ser Millonario_50k.mp3" id="audio" muted ></audio>
+        </div>
+    </header>
+    <div class="container">
+        <div class="inner-header">
+            <h1 class="ft-cb--white taC">RANKING</h1>
+        </div>
+
+        <h5 class="taC">TU POSICIÓN</h5>
+        <div class="position-card">
+            <div>
+                <span class="position-card__number">8</span>
+                <span class="position-card__name">Juan Ballesteros</span>
+            </div>
+            <span class="position-card__points">12300 Puntos</span>
+        </div>
+
+        <h5 class="taC">TOP 5</h5>
+        <ol class="top-ranking">
+            <li>
+                <div class="position-card position-card--top">
+                    <div>
+                        <span class="position-card__number">5</span>
+                        <span class="position-card__name">Juan Ballesteros</span>
+                    </div>
+                    <span class="position-card__points">123 Puntos</span>
+                </div>
+            </li>
+            <li>
+                <div class="position-card position-card--top">
+                    <div>
+                        <span class="position-card__number">5</span>
+                        <span class="position-card__name">Juan Ballesteros</span>
+                    </div>
+                    <span class="position-card__points">123 Puntos</span>
+                </div>
+            </li>
+            <li>
+                <div class="position-card position-card--top">
+                    <div>
+                        <span class="position-card__number">5</span>
+                        <span class="position-card__name">Juan Ballesteros</span>
+                    </div>
+                    <span class="position-card__points">123 Puntos</span>
+                </div>
+            </li>
+            <li>
+                <div class="position-card position-card--top">
+                    <div>
+                        <span class="position-card__number">5</span>
+                        <span class="position-card__name">Juan Ballesteros</span>
+                    </div>
+                    <span class="position-card__points">123 Puntos</span>
+                </div>
+            </li>
+        </ol>
+
+        <div class="inner-footer">
+            <button class="btn-theme btn-theme--line btn-theme--reg btn-theme--small">Cargar más resultados</button>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+        // const button = document.querySelector("#init_music") as HTMLElement;
+        const button = document.querySelector("#init_music")
+        const music = document.querySelector("#audio")
+        button.addEventListener("click", ()=> {
+            music.muted =  !music.muted
+            music.paused ? music.play() :  music.pause()
+            button.classList.toggle("active-btnmusic")
+        })
+    </script>
+</body>
+
+
+</html>

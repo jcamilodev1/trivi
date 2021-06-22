@@ -1,0 +1,79 @@
+/* FORM */
+
+.form {
+}
+
+%fieldStyles {
+    background-color: transparent;
+    border: 1px solid $white;
+    border-radius: 12px;
+    color: $white;
+    display: block;
+    font-size: 16px;
+    height: 55px;
+    max-width: 270px;
+    margin: 10px auto;
+    padding: 0 10px;
+    width: 100%;
+    color: #f2c43e;
+    &::placeholder {
+        color: $white;
+    }
+}
+
+input {
+    &[type="text"],
+    &[type="email"],
+    &[type="password"],
+    &[type="tel"] {
+        @extend %fieldStyles;
+    }
+}
+
+select {
+    padding-right: 35px;
+
+    @extend %fieldStyles;
+
+    // Removed default arrow
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    @include bg("icons/icon_arrow-select.svg", $position: right, $size: 30px);
+
+    option {
+        color: $black;
+    }
+}
+
+.login {
+    margin: 30px 10px;
+
+    &__label {
+        display: block;
+        font-family: $hvLT;
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    &__input-text {
+        background-color: transparent;
+        border: 1px solid $white;
+        border-radius: 12px;
+        color: $white;
+        font-family: $hvLT;
+        font-size: 16px;
+        padding: 15px 20px;
+        width: 100%;
+
+        &::placeholder {
+            color: #f2c43e;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
