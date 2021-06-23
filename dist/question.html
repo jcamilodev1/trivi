@@ -22,7 +22,7 @@
     </header>
     <div class="container">
         <section class="question">
-            <form class="form form--wizard">
+            <div class="form--wizard">
                 <fieldset class="form__panel form__panel--active">
                     <h4 class="question__title">¿Pregunta Numero 1?</h4>
                     <div class="form__box form__box--radio">
@@ -48,28 +48,32 @@
                     <section class="form__row">
                         <div class="form__col">
                             <div class="form__box form__box--radio-image">
-                                <input class="form__input" type="radio" name="question_1" id="option_1" value="option_12">
+                                <input class="form__input" type="radio" name="question_1" id="option_1"
+                                    value="option_12">
                                 <label class="form__label form__label--image" for="option_1"><img
                                         src="/img/wall_test.png" alt="Opcion"></label>
                             </div>
                         </div>
                         <div class="form__col">
                             <div class="form__box form__box--radio-image">
-                                <input class="form__input" type="radio" name="question_1" id="option_2" value="option_22">
+                                <input class="form__input" type="radio" name="question_1" id="option_2"
+                                    value="option_22">
                                 <label class="form__label form__label--image" for="option_2"><img
                                         src="/img/radio_example.jpg" alt="Opcion"></label>
                             </div>
                         </div>
                         <div class="form__col">
                             <div class="form__box form__box--radio-image">
-                                <input class="form__input" type="radio" name="question_1" id="option_3" value="option_32">
+                                <input class="form__input" type="radio" name="question_1" id="option_3"
+                                    value="option_32">
                                 <label class="form__label form__label--image" for="option_3"><img
                                         src="/img/card_price.png" alt="Opcion"></label>
                             </div>
                         </div>
                         <div class="form__col">
                             <div class="form__box form__box--radio-image">
-                                <input class="form__input" type="radio" name="question_1" id="option_4" value="option_42">
+                                <input class="form__input" type="radio" name="question_1" id="option_4"
+                                    value="option_42">
                                 <label class="form__label form__label--image" for="option_4"><img
                                         src="/img/radio_example.jpg" alt="Opcion"></label>
                             </div>
@@ -78,9 +82,24 @@
                 </fieldset>
 
                 <div class="form__final">
-                    Mensaje Final
+                    <div class="inner-header">
+                        <h1 class="ft-cb--white taC">FIN DE LA TRIVIA</h1>
+                    </div>
+
+                    <h2 class="fs-40 ft-cb--white taC">TUS RESULTADOS</h2>
+                    <h3 class="i-SB taC">X/<span class="op__total-questions"></span> Preguntas</h3>
+                    <h3 class="i-SB taC mb25">Tu tiempo fue de <span class="op__time"></span></h3>
+                    <h3 class="i-SB taC">Ingresa para registrar tu puntaje y redime tu premio</h3>
+
+                    <form action="" class="login">
+                        <label class="login__label" for="email">Correo electrónico *</label>
+                        <input class="login__input-text" id="email" type="email" placeholder="autofilled@gmail.com"
+                            required>
+                        <!-- <input class="btn btn-theme login__submit" type="submit" value="Continuar"> -->
+                        <a href="download.html" class="btn-theme login__submit">Continuar</a>
+                    </form>
                 </div>
-            </form>
+            </div>
         </section>
     </div>
     <script src="js/main.js"></script>

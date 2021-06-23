@@ -1,7 +1,7 @@
 /* QUESTIONS */
 
 export const page = async () => {
-    
+
     // Countdown Initialized
     Countdown.init()
 
@@ -14,7 +14,7 @@ const Countdown = (function () {
     let countdownClass: string = 'countdown';
     let changedVelocity: boolean = false;
     let counter = setInterval(() => 100);
-    
+
     let seconds: number = 30;
     let totalTime: number = seconds * 100;
     let startTime: any = +new Date();
@@ -92,7 +92,7 @@ const Countdown = (function () {
         }, 30)
     }
 
-    function stopTimer(): void {
+    function stopTimer(): string {
         clearInterval(counter)
         _setAudio('stop')
 
@@ -107,6 +107,12 @@ const Countdown = (function () {
         // Updated output
         refCountdownText.innerHTML = '00:00:00'
         refCountdownProgress.setAttribute('value', '0')
+
+        return totalTimeUsed
+    }
+
+    function hideCounter(): void {
+        refCountdownContainer.classList.add('hidden')
     }
 
     function init(): void {
@@ -115,17 +121,49 @@ const Countdown = (function () {
 
         _updateTime()
     }
-    return { init, stopTimer }
+    return { init, stopTimer, hideCounter }
 })();
 
 // ---------------- WIZARD FORM MODULE ----------------
 const WizardForm = (function () {
     let wizardFormClass: string = 'form--wizard'
     let refWizardForm = document.getElementsByClassName(`${wizardFormClass}`);
-    let responses: object = {};
-    let questionNumber: number = 1;
+    let outputClass: string = 'op';
+
+    interface Option {
+        text: string,
+        value: string
+    }
+    interface Question {
+        title: string,
+        options: Array<Option>,
+        correctOption: number
+    }
+    interface Quiz {
+        currentAnswer?: number,
+        correctAnswers?: number,
+        totalQuestions: number,
+        questions?: Array<Question>
+        usedTime?: string,
+        responses?: object,
+        htmlReferences?: {
+            time: HTMLElement,
+            totalQuestions: HTMLElement
+        }
+    }
 
     function _setController(form: Element): void {
+
+        let wizardQuiz: Quiz = {
+            usedTime: '00:00:00',
+            totalQuestions: 0,
+            currentAnswer: 1,
+            responses: {},
+            htmlReferences: {
+                'time': form.querySelector(`.${outputClass}__time`),
+                'totalQuestions': form.querySelector(`.${outputClass}__total-questions`)
+            }
+        };
 
         form.addEventListener('click', function (e) {
             let refCurrentTarget = this
@@ -148,11 +186,10 @@ const WizardForm = (function () {
             if (currentElement) {
                 // Obtiene el valor del input de la opcion escogida
                 let inputRef: HTMLInputElement = currentElement.previousElementSibling || currentElement.nextElementSibling
-                let responseQuestion = { [`question_${questionNumber}`]: inputRef.value }
+                let responseQuestion = { [`question_${wizardQuiz.currentAnswer}`]: inputRef.value }
 
                 // Guarda las respuestas
-                responses = { ...responses, ...responseQuestion }
-                questionNumber++
+                wizardQuiz.responses = { ...wizardQuiz.responses, ...responseQuestion }
 
                 // Cambia de pregunta
                 let refPanel: any = helper(currentElement, '.form__panel--active')
@@ -160,19 +197,29 @@ const WizardForm = (function () {
 
                 if (refPanel.nextElementSibling && refPanel.nextElementSibling.classList.contains('form__panel')) {
                     refPanel.nextElementSibling.classList.add('form__panel--active')
+                    wizardQuiz.currentAnswer++
                 }
                 else {
-                    // form__final
+                    // Seccion final
                     let finalMessage = refCurrentTarget.querySelector('.form__final')
                     if (finalMessage) finalMessage.classList.add('form__final--show')
 
-                    console.log('AQUI SE PODRÁ REDIRECCIONAR/REALIZAR PETICION AJAX/');
                     try {
-                        Countdown.stopTimer()
+                        // Oculta el contador y lo detiene
+                        Countdown.hideCounter()
+                        wizardQuiz.usedTime = Countdown.stopTimer()
+
+                        // Muestra la información en la seccion final (form__final)
+                        if (wizardQuiz.htmlReferences['time']) wizardQuiz.htmlReferences['time'].innerHTML = wizardQuiz.usedTime
+                        if (wizardQuiz.htmlReferences['totalQuestions']) wizardQuiz.htmlReferences['totalQuestions'].innerHTML = `${wizardQuiz.currentAnswer}`
+
                     } catch (error) {
                         console.log('No hay ningun contador que parar.');
                     }
+
+                    console.log('AQUI SE PODRÁ REDIRECCIONAR/REALIZAR PETICION AJAX/');
                 }
+
             }
         })
     }
