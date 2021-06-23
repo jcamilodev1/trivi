@@ -11,11 +11,11 @@
     display: block;
     font-size: 16px;
     height: 55px;
-    max-width: 270px;
     margin: 10px auto;
     padding: 0 10px;
     width: 100%;
     color: #f2c43e;
+    outline: none;
     &::placeholder {
         color: $white;
     }

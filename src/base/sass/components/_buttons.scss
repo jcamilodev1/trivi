@@ -39,10 +39,12 @@
 }
 
 .btn-theme {
+    display: block;
     background-color: $yellow;
     color: $blue-dark;
     font-family: $interExtraBold;
     margin: 0 auto;
+    padding: 10px 5px;
     &--reg {
         font-family: $interReg;
     }
