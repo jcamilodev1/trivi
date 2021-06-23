@@ -1,6 +1,163 @@
 /* FORM */
 
+%radioForm {
+    .form__input {
+        display: none;
+
+        &:checked {
+            & + .form__label {
+                background-color: $blue-ultra-dark;
+            }
+        }
+    }
+
+    .form__label {
+        border: 1px solid $white;
+        border-radius: 5px;
+        color: $white;
+        cursor: pointer;
+        display: block;
+        padding: 15px 25px;
+
+        @include transition;
+
+        &:hover {
+            background-color: $blue-ultra-dark;
+        }
+    }
+}
+
 .form {
+    * {
+        font-family: $hvLT;
+    }
+
+    // LAYOUT
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__col {
+        flex: 1 0 50%;
+        padding: 5px;
+    }
+
+    // WIZARD
+    &__panel {
+        display: none;
+        border: none;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__final {
+        display: none;
+
+        &--show {
+            display: block;
+        }
+    }
+
+    &__box {
+        margin: 20px auto;
+        max-width: 270px;
+
+        &--radio {
+            @extend %radioForm;
+
+            &-image {
+                height: 100%;
+                margin: 0;
+
+                .form__input {
+                    &:checked {
+                        & + .form__label {
+                            box-shadow: 0px 0px 0px 5px $green;
+                        }
+                    }
+                }
+
+                .form__label {
+                    height: 100%;
+                    padding: 0;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        box-shadow: 0px 0px 0px 5px $green;
+                    }
+                }
+
+                @extend %radioForm;
+            }
+        }
+
+        &--check {
+
+            .form__input {
+                display: none;
+
+                &:checked {
+                    & + .form__label {
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .form__label {
+                display: block;
+                padding-left: 40px;
+                position: relative;
+
+                @include transition;
+
+                &:before {
+                    content: "";
+
+                    border: 1px solid $white;
+                    height: 24px;
+                    width: 24px;
+
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                }
+
+                &::after {
+                    content: "";
+                    height: 24px;
+                    opacity: 0;
+                    width: 24px;
+
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+
+                    @include bg("icons/icon_check.svg", $size: 58%);
+                    @include transition;
+                }
+            }
+        }
+    }
+
+    @media #{$mediaXMobile} {
+        &__row {
+            justify-content: center;
+        }
+    }
 }
 
 %fieldStyles {
@@ -11,6 +168,7 @@
     display: block;
     font-size: 16px;
     height: 55px;
+    max-width: 270px;
     margin: 10px auto;
     padding: 0 10px;
     width: 100%;

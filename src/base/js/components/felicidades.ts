@@ -19,8 +19,6 @@ export const page = async () => {
   console.log('Api:', api.example())
   console.log('Dama:', dm.welcome())
   console.log("felicidadd")
-  // Added Background Shapes
-  document.body.insertAdjacentHTML('beforeend', '<ul class="circles"><li></li><li></li><li></li><li></li></ul>');
   new ClipboardJS('.code-btn');
 }
 

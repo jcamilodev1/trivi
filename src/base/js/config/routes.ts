@@ -9,4 +9,9 @@ export const routes = [
         path: '/congratulations.html',
         component: 'felicidades'
     },
+    {
+        name: 'questions',
+        path: '/question.html',
+        component: 'questions'
+    },
 ]

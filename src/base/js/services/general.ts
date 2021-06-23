@@ -6,5 +6,7 @@
 // const api = new apiDrupal();
 export const page = async () => {
     /* ON LOAD */
-    console.log('Dama: Desarrollado pro 150%')
+
+    // Added Background Shapes
+    document.body.insertAdjacentHTML('beforeend', '<ul class="circles"><li></li><li></li><li></li><li></li></ul>');
 }

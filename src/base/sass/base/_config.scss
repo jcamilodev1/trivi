@@ -7,7 +7,8 @@ $rootColors: (
 	"blue-ultra-dark": #001E5A,
 	"yellow": #FFEB00,
 	"orange": #FFCD00,
-	"orange-medium": #FFBE3D
+	"orange-medium": #FFBE3D,
+	"green": #77B82A
 );
 
 // ROOT
@@ -39,6 +40,7 @@ $blue-ultra-dark: var(--color-blue-ultra-dark);
 $yellow: var(--color-yellow);
 $orange: var(--color-orange);
 $orange-medium: var(--color-orange-medium);
+$green: var(--color-green);
 
 // FORMS
 $wrong: $red;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,82 @@
     <title>Corona</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <header class="header">
-        <img class="logo_example" src="/img/logo_example.png" alt="Logo">
+        <section id="countdown" class="countdown">
+            <span class="countdown__text">00:00</span>
+            <input type="range" class="countdown__progress" value="0" disabled>
+        </section>
         <div class="audio-container">
             <button class="audio-container__button"></button>
             <audio class="audio-container__src" src=""></audio>
         </div>
     </header>
     <div class="container">
-        <section class="countdown">
-            <span class="countdown__text">00:00</span>
-            <input type="range" class="countdown__progress" value="0" disabled>
+        <section class="question">
+            <form class="form form--wizard">
+                <fieldset class="form__panel form__panel--active">
+                    <h4 class="question__title">¿Pregunta Numero 1?</h4>
+                    <div class="form__box form__box--radio">
+                        <input class="form__input" type="radio" name="question_1" id="option_1" value="option_1">
+                        <label class="form__label" for="option_1">Lorem ipsum dolor sit amet</label>
+                    </div>
+                    <div class="form__box form__box--radio">
+                        <input class="form__input" type="radio" name="question_1" id="option_2" value="option_2">
+                        <label class="form__label" for="option_2">Lorem ipsum dolor sit amet</label>
+                    </div>
+                    <div class="form__box form__box--radio">
+                        <input class="form__input" type="radio" name="question_1" id="option_3" value="option_3">
+                        <label class="form__label" for="option_3">Lorem ipsum dolor sit amet</label>
+                    </div>
+                    <div class="form__box form__box--radio">
+                        <input class="form__input" type="radio" name="question_1" id="option_4" value="option_4">
+                        <label class="form__label" for="option_4">Lorem ipsum dolor sit amet</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form__panel">
+                    <h4 class="question__title">¿Pregunta Numero 2?</h4>
+                    <section class="form__row">
+                        <div class="form__col">
+                            <div class="form__box form__box--radio-image">
+                                <input class="form__input" type="radio" name="question_1" id="option_1" value="option_12">
+                                <label class="form__label form__label--image" for="option_1"><img
+                                        src="/img/wall_test.png" alt="Opcion"></label>
+                            </div>
+                        </div>
+                        <div class="form__col">
+                            <div class="form__box form__box--radio-image">
+                                <input class="form__input" type="radio" name="question_1" id="option_2" value="option_22">
+                                <label class="form__label form__label--image" for="option_2"><img
+                                        src="/img/radio_example.jpg" alt="Opcion"></label>
+                            </div>
+                        </div>
+                        <div class="form__col">
+                            <div class="form__box form__box--radio-image">
+                                <input class="form__input" type="radio" name="question_1" id="option_3" value="option_32">
+                                <label class="form__label form__label--image" for="option_3"><img
+                                        src="/img/card_price.png" alt="Opcion"></label>
+                            </div>
+                        </div>
+                        <div class="form__col">
+                            <div class="form__box form__box--radio-image">
+                                <input class="form__input" type="radio" name="question_1" id="option_4" value="option_42">
+                                <label class="form__label form__label--image" for="option_4"><img
+                                        src="/img/radio_example.jpg" alt="Opcion"></label>
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+
+                <div class="form__final">
+                    Mensaje Final
+                </div>
+            </form>
         </section>
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

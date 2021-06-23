@@ -26,25 +26,29 @@
 }
 
 .btn, button {
-    display: block;
     outline: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
-    margin: 4px;
-    max-width: 270px;
-    padding: 15px 30px;
-    width: calc(100% - 8px);
 }
 
 .btn-theme {
-    display: block;
+    display: inline-block;
     background-color: $yellow;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
     color: $blue-dark;
     font-family: $interExtraBold;
-    margin: 0 auto;
-    padding: 10px 5px;
+    margin: 4px auto;
+    max-width: 270px;
+    outline: none;
+    padding: 15px 30px;
+    width: 100%;
+
+
     &--reg {
         font-family: $interReg;
     }
